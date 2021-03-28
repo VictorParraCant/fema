@@ -1,0 +1,64 @@
+.card-container {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin: 2px 0px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .description-container {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .date {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      padding: 0px 4px;
+
+      .date-text {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .month {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .category {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .concept {
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+  }
+
+  .highlight {
+    padding: 0px 4px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .income-text {
+    color: green;
+  }
+
+  .expense-text {
+    color: red;
+  }
+}
