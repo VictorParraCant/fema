@@ -67,7 +67,7 @@ export class Transaction {
     return new Transaction({
       amount: MonetaryAmount.fromUnitary(amount),
       type: TransactionType[type],
-      category: TransactionType[category],
+      category: TransactionCategory[category],
     });
   }
 }

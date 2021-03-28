@@ -7,6 +7,7 @@ import { createTransaction } from "../../repository/transactions";
 function AmountForm() {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("EXPENSE");
+  const [category, setCategory] = useState("UNKNOWN");
 
   const handleOnChange = (e) => {
     setAmount(e.target.value);
@@ -16,8 +17,14 @@ function AmountForm() {
     setType(type);
   };
 
+  const handleChangeCategory = (category) => {
+    if (category.trim() !== "") {
+      setCategory(category);
+    }
+  };
+
   const addTransaction = () => {
-    const transaction = Transaction.addTransaction({ amount, type });
+    const transaction = Transaction.addTransaction({ amount, type, category });
     createTransaction({ transaction });
     setAmount("");
   };
@@ -42,7 +49,9 @@ function AmountForm() {
       </div>
 
       <div className="col">
-        <CategoriesForm />
+        <CategoriesForm
+          selectCategory={(category) => handleChangeCategory(category)}
+        />
       </div>
 
       <div className="col">

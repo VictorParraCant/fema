@@ -1,7 +1,7 @@
 import React from "react";
 import { TransactionExpenseTypes } from "../../domain/transaction";
 
-function CategoriesForm() {
+function CategoriesForm({ selectCategory }) {
   return (
     <div>
       <input
@@ -9,7 +9,7 @@ function CategoriesForm() {
         list="datalistOptions"
         id="exampleDataList"
         placeholder="Type to search..."
-        
+        onChange={(e) => selectCategory(e.target.value)}
       />
 
       <datalist id="datalistOptions">
